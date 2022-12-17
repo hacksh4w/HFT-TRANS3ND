@@ -18,7 +18,8 @@ import Button from '@mui/material/Button';
 import Slide from '@mui/material/Slide';
 import { TextField } from '@mui/material';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-
+import InputAdornment from '@mui/material/InputAdornment';
+import searchIcon from '../../assets/SearchIcon.svg'
 const provider = new GoogleAuthProvider();
 
 const drawerWidth = 240;
@@ -42,7 +43,7 @@ export function Navbar(props) {
   const [searchValue, setSearchValue] = React.useState('');
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
+  const [search, setSearch] = React.useState(false);
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
@@ -119,37 +120,59 @@ signInWithPopup(auth, provider)
           >
             <MenuIcon />
           </IconButton>
-          <style>@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Montserrat&display=swap')</style>
-
-          {/* <TextField 
-                name='History' 
+          <button onClick={()=>(setSearch(!search))} style={{background:'transparent',border:'none',display: search ? 'none' : 'flex'}}>
+            <img style={{height:'60px'}} src={searchIcon}></img>
+          </button>
+          <TextField 
+                name='Name'
+                autoComplete='off'
                 onChange={handleChange} 
-                label="Search on!" 
                 sx={{
                     width: '50%',
+                    display: search ? 'flex' : 'none',
+                    transition: '1s',
                     '& .MuiOutlinedInput-root':{
-                        maxHeight: '35px',
+                        borderRadius:'20px',
                       '& fieldset':{
-                        borderColor: 'white',
-                        borderRadius: '50px'
+                        borderColor: 'white'
                       },
                       '&.Mui-focused fieldset': {
-                        borderColor: 'white',
+                        borderColor: 'white'
                       },
                     },
                     '& .MuiOutlinedInput-root:hover':{
                       '& fieldset':{
-                        borderColor: 'white'
+                        borderColor:'white'
                       }
-                    }}}
-                InputProps={{style: {color:'white'}}}
+                    }
+                    }} 
+                InputProps={{startAdornment: (
+                            <InputAdornment position="start">
+                            <button onClick={()=>(setSearch(!search))} style={{background:'transparent',border:'none',display: search ? 'flex' : 'none'}}>
+                                    <img style={{height:'55px'}} src={searchIcon}></img>
+                            </button>
+                            </InputAdornment>),
+                            style: {color:'white'}}}
                 InputLabelProps={{
-                  style: { display: 'none' },
-                  shrink: false
+                  style: { color:'white' },
                 }}
                 variant='outlined'
-                autoComplete='on'
-                id="standard-basic"/> */}
+                label=''
+                id="outlined-basic"/>
+          <style>@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Montserrat&display=swap')</style>
+          <button style={{
+                        display:'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        width: '150px',
+                        height: '60px',
+                        border: '3.16682px solid #E39B06',
+                        borderRadius: '23.9651px',
+                        background:'transparent',
+                        margin:'0 75px'}}>
+                <h5 style={{color:'white',fontSize:'1.8rem',fontFamily: "'Kanit', sans-serif"}}>Login</h5>
+          </button>
           <button style={{display: 'flex',
                           flexDirection: 'row',
                           justifyContent: 'center',
@@ -162,7 +185,7 @@ signInWithPopup(auth, provider)
                           borderRadius: '20px',
                           border:'none'
                           }} onClick={()=>(signIn())}>
-            <h5 style={{color:'white',fontSize:'1.8rem',fontFamily: "'Kanit', sans-serif"}}>Sign up</h5>
+            <h5 style={{color:'white',fontSize:'1.7rem',fontFamily: "'Kanit', sans-serif"}}>Sign up</h5>
           </button>
         </Toolbar>
       </AppBar>
