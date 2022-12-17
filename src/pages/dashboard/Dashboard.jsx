@@ -9,7 +9,6 @@ export default function Dashboard() {
         <Card job='Carpenter'/>
         <Card job='Carpenter'/>
         <Card job='Carpenter'/>
-
     </div>
   )
 }
