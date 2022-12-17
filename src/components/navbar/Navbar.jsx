@@ -17,6 +17,9 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Slide from '@mui/material/Slide';
 import { TextField } from '@mui/material';
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
+const provider = new GoogleAuthProvider();
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
@@ -53,6 +56,27 @@ export function Navbar(props) {
     })
     console.log(value)
   }
+  function signIn(){
+    const auth = getAuth();
+signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+  });
+  }
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
@@ -76,8 +100,16 @@ export function Navbar(props) {
   return (
     <div>
     <HideOnScroll {...props}>
-      <AppBar component="nav" >
-        <Toolbar sx={{display:'flex',justifyContent:'space-around',alignItems:'center',flexDirection:'row'}}>
+      <AppBar component="nav" sx={{
+                        padding:'0 20px',
+                        background: 'linear-gradient(180deg, #9A0505 -29.67%, rgba(154, 5, 5, 0) 100%)',
+                        height: "109px",
+                        display:'flex',
+                        alignItems:'center',
+                        justifyContent:'center',
+                        flexDirection:'column',
+                        boxShadow:'none'}}>
+        <Toolbar sx={{display:'flex',justifyContent:'space-between',alignItems:'center',flexDirection:'row',width:'95vw'}}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -87,42 +119,53 @@ export function Navbar(props) {
           >
             <MenuIcon />
           </IconButton>
+          <style>@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Montserrat&display=swap')</style>
           <div>
-            <h6 style={{fontSize:'2rem'}}>SoJoU</h6>
+            <h6 style={{fontSize:'2rem',fontFamily: "'Kanit', sans-serif"}}>SoJoU</h6>
           </div>
-          <TextField 
+          {/* <TextField 
                 name='History' 
                 onChange={handleChange} 
-                label="If any?" 
+                label="Search on!" 
                 sx={{
                     width: '50%',
                     '& .MuiOutlinedInput-root':{
+                        maxHeight: '35px',
                       '& fieldset':{
-                        borderColor: 'red'
+                        borderColor: 'white',
+                        borderRadius: '50px'
                       },
                       '&.Mui-focused fieldset': {
-                        borderColor: 'green',
+                        borderColor: 'white',
                       },
                     },
                     '& .MuiOutlinedInput-root:hover':{
                       '& fieldset':{
-                        borderColor: 'red'
+                        borderColor: 'white'
                       }
-                    }}} 
-                // InputProps={{style: {color:'red'}}}
-                // InputLabelProps={{
-                //   style: { color:theme?'green':'grey' },
-                // }}
-                variant='standard'
-                autoComplete='off'
-                id="standard-basic"/>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
-              </Button>
-            ))}
-          </Box>
+                    }}}
+                InputProps={{style: {color:'white'}}}
+                InputLabelProps={{
+                  style: { display: 'none' },
+                  shrink: false
+                }}
+                variant='outlined'
+                autoComplete='on'
+                id="standard-basic"/> */}
+          <button style={{border:'2px solid white',
+                          display: 'flex',
+                          flexDirection: 'row',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          padding: '10px 25px',
+                          gap: '15px',
+                          width: '167px',
+                          height: '72px',
+                          backgroundColor: '#E39B06',
+                          borderRadius: '20px'
+                          }} onClick={()=>(signIn())}>
+            <h5 style={{color:'white',fontSize:'2rem',fontFamily: "'Kanit', sans-serif"}}>Sign up</h5>
+          </button>
         </Toolbar>
       </AppBar>
       </HideOnScroll>
