@@ -4,7 +4,7 @@ import React,{useState,useEffect} from 'react';
 export default function Navbar() {
  
     var location = useLocation().pathname
-    if (location === '/'){
+    if (location === '/landing'){
             return (
                 <div style={{
                 padding:'0 20px',

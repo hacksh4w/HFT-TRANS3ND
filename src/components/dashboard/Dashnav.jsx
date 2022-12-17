@@ -34,7 +34,7 @@ export default function () {
             <div style={{display:'flex',flexDirection:'column'}}>
                 <div className='flex'>
                     <div className='flex' style={{height:'100%',width:'30%',paddingLeft:'20px'}}><HomeIcon sx={{fontSize:'30px','&:hover':{color: '#E39B06'}}}/></div>
-                    <Link to='/' style={{all:'unset',width:'70%'}}><div style={{height:'100%'}}><p style={{margin: '20px'}}>Home</p></div></Link>
+                    <Link to='/landing' style={{all:'unset',width:'70%'}}><div style={{height:'100%'}}><p style={{margin: '20px'}}>Home</p></div></Link>
                 </div>
 
                 <div className='flex'>

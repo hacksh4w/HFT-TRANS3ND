@@ -93,7 +93,7 @@ export default function Signin() {
                 label="Password" 
                 type="Password"
                 id="outlined-basic"/>
-            <button class="login-button"><Link style={{all:'unset'}} to='/'>Login</Link></button>
+            <button class="login-button"><Link style={{all:'unset'}} to='/landing'>Login</Link></button>
           </form>
       </div>
     </div>

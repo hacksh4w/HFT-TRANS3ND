@@ -13,9 +13,9 @@ export default function App(){
     <div className="App" > 
     <Navbar/> 
         <Routes>
-          <Route path="/" element={<Landing/>} errorElement={<ErrorPage/>} />
+          <Route path="/" element={<Signin/>} errorElement={<ErrorPage/>} />
           <Route path="/mainpage/*" element={<Mainpage />}/>
-          <Route path="/authentication" element={<Signin/>}></Route>
+          <Route path="/landing" element={<Landing/>}></Route>
           {/* <Route path="/dashboard" element={<DashBoard />}/> */}
         </Routes>
     </div>
