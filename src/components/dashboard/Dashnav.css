@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
+.flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Exo 2', sans-serif;
+}
+.flex:hover{
+    color: #E39B06;
+    cursor: pointer;
+}
