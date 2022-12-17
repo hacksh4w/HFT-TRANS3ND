@@ -1,0 +1,21 @@
+.parent .a1 .Jobdes{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height */
+
+
+    color: #9A0505;
+}
+.parent .a1 {
+    padding: 10px;
+}
+.parent .a1 .des{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 22px;
+}
