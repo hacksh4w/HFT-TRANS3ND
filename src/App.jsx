@@ -5,6 +5,7 @@ import ErrorPage from './error-page';
 import Landing from './pages/landing/Landing';
 import Navbar  from './components/navbar/Navbar.jsx';
 import Mainpage from './pages/mainpage/Mainpage';
+import Signin from './pages/authentication/Signin';
 export default function App(){
   
   return (
@@ -13,7 +14,8 @@ export default function App(){
     <Navbar/> 
         <Routes>
           <Route path="/" element={<Landing/>} errorElement={<ErrorPage/>} />
-          <Route path="/mainpage" element={<Mainpage />}/>
+          <Route path="/mainpage/*" element={<Mainpage />}/>
+          <Route path="/authentication" element={<Signin/>}></Route>
           {/* <Route path="/dashboard" element={<DashBoard />}/> */}
         </Routes>
     </div>

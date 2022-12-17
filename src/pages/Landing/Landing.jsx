@@ -16,7 +16,7 @@ const ZoomOutExample = () => {
   return (
       <div>
         <style> @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Staatliches&display=swap'); </style>
-        <Zoom scale={1} indicators={false} >
+        <Zoom scale={1} indicators={false} duration='5000' >
             {images.map((each, index) => (
           <div ref={ref} key={index} style={{ width: "100%",height:'100vh',backgroundImage:`url(${each})`,backgroundRepeat:'no-repeat',backgroundSize:'cover' }}>
             {/* <img style={{ objectFit: "cover", width: "100%",height:'100vh'}} alt="Slide Image" src={each} /> */}
