@@ -77,7 +77,7 @@ export function Navbar(props) {
     <div>
     <HideOnScroll {...props}>
       <AppBar component="nav" >
-        <Toolbar sx={{display:'flex',justifyContent:'space-between',alignItems:'center',flexDirection:'row'}}>
+        <Toolbar sx={{display:'flex',justifyContent:'space-around',alignItems:'center',flexDirection:'row'}}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -88,7 +88,7 @@ export function Navbar(props) {
             <MenuIcon />
           </IconButton>
           <div>
-            <h6>SoJoU</h6>
+            <h6 style={{fontSize:'2rem'}}>SoJoU</h6>
           </div>
           <TextField 
                 name='History' 
