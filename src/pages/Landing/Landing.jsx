@@ -2,7 +2,7 @@ import React from 'react'
 
 const Landing = () => {
   return (
-    <div>Landing</div>
+    <div style={{minHeight: '10000px',marginTop:'100px',}}>Landing</div>
   )
 }
 

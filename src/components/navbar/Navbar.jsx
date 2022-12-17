@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
@@ -14,11 +15,27 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import Slide from '@mui/material/Slide';
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
-
+function HideOnScroll(props) {
+    const { children, window } = props;
+    // Note that you normally won't need to set the window ref as useScrollTrigger
+    // will default to window.
+    // This is only being set here because the demo is in an iframe.
+    const trigger = useScrollTrigger({
+      target: window ? window() : undefined,
+    });
+  
+    return (
+      <Slide appear={false} direction="down" in={!trigger}>
+        {children}
+      </Slide>
+    );
+  }
 export function Navbar(props) {
+    
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -48,7 +65,8 @@ export function Navbar(props) {
 
   return (
     <div>
-      <AppBar component="nav" sx={{position: 'relative'}}>
+    <HideOnScroll {...props}>
+      <AppBar component="nav" >
         <Toolbar>
           <IconButton
             color="inherit"
@@ -75,6 +93,7 @@ export function Navbar(props) {
           </Box>
         </Toolbar>
       </AppBar>
+      </HideOnScroll>
       <Box component="nav">
         <Drawer
           container={container}
