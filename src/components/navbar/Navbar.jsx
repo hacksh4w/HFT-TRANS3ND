@@ -109,7 +109,7 @@ signInWithPopup(auth, provider)
                         justifyContent:'center',
                         flexDirection:'column',
                         boxShadow:'none'}}>
-        <Toolbar sx={{display:'flex',justifyContent:'space-between',alignItems:'center',flexDirection:'row',width:'95vw'}}>
+        <Toolbar sx={{display:'flex',justifyContent:'flex-end',alignItems:'center',flexDirection:'row',width:'95vw'}}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -120,9 +120,7 @@ signInWithPopup(auth, provider)
             <MenuIcon />
           </IconButton>
           <style>@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Montserrat&display=swap')</style>
-          <div>
-            <h6 style={{fontSize:'2rem',fontFamily: "'Kanit', sans-serif"}}>SoJoU</h6>
-          </div>
+
           {/* <TextField 
                 name='History' 
                 onChange={handleChange} 
@@ -152,19 +150,19 @@ signInWithPopup(auth, provider)
                 variant='outlined'
                 autoComplete='on'
                 id="standard-basic"/> */}
-          <button style={{border:'2px solid white',
-                          display: 'flex',
+          <button style={{display: 'flex',
                           flexDirection: 'row',
                           justifyContent: 'center',
                           alignItems: 'center',
                           padding: '10px 25px',
                           gap: '15px',
-                          width: '167px',
-                          height: '72px',
+                          width: '150px',
+                          height: '60px',
                           backgroundColor: '#E39B06',
-                          borderRadius: '20px'
+                          borderRadius: '20px',
+                          border:'none'
                           }} onClick={()=>(signIn())}>
-            <h5 style={{color:'white',fontSize:'2rem',fontFamily: "'Kanit', sans-serif"}}>Sign up</h5>
+            <h5 style={{color:'white',fontSize:'1.8rem',fontFamily: "'Kanit', sans-serif"}}>Sign up</h5>
           </button>
         </Toolbar>
       </AppBar>
