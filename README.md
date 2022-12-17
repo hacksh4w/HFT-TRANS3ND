@@ -17,7 +17,7 @@ Tech-Heroes : IPFS, web3.storage
 ## Project Description
 
 
-# Team Members
+## Team Members
 ### **Team Name** : TRANS3ND
 1. [Gourisankar Shaji](https://github.com/GussySussy)
 1. [Mrinalini Nair Ani](https://github.com/hacksh4w/)
@@ -42,3 +42,14 @@ Tech-Heroes : IPFS, web3.storage
 
 ### Live Demo
 Hosted Link : [TRANS3ND](https://.netlify.app/)
+
+
+## Installation
+Steps To Run the Project:
+
+1.Downloading the Modules.
+- vite; react; react-router; web3.storage; axios 
+2. `` cd  TRANS3ND  ``
+3. `` npm install``
+4. `` npm run dev``
+
