@@ -16,6 +16,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Slide from '@mui/material/Slide';
+import { TextField } from '@mui/material';
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
@@ -35,14 +36,23 @@ function HideOnScroll(props) {
     );
   }
 export function Navbar(props) {
-    
+  const [searchValue, setSearchValue] = React.useState('');
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
-
+  function handleChange(event){
+    const value = event.target.value;
+    setSearchValue((preValue)=>{
+        return{
+            ...preValue,
+            value
+        }
+    })
+    console.log(value)
+  }
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
@@ -67,7 +77,7 @@ export function Navbar(props) {
     <div>
     <HideOnScroll {...props}>
       <AppBar component="nav" >
-        <Toolbar>
+        <Toolbar sx={{display:'flex',justifyContent:'space-between',alignItems:'center',flexDirection:'row'}}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -77,13 +87,35 @@ export function Navbar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-          >
-            MUI
-          </Typography>
+          <div>
+            <h6>SoJoU</h6>
+          </div>
+          <TextField 
+                name='History' 
+                onChange={handleChange} 
+                label="If any?" 
+                sx={{
+                    width: '50%',
+                    '& .MuiOutlinedInput-root':{
+                      '& fieldset':{
+                        borderColor: 'red'
+                      },
+                      '&.Mui-focused fieldset': {
+                        borderColor: 'green',
+                      },
+                    },
+                    '& .MuiOutlinedInput-root:hover':{
+                      '& fieldset':{
+                        borderColor: 'red'
+                      }
+                    }}} 
+                // InputProps={{style: {color:'red'}}}
+                // InputLabelProps={{
+                //   style: { color:theme?'green':'grey' },
+                // }}
+                variant='standard'
+                autoComplete='off'
+                id="standard-basic"/>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
               <Button key={item} sx={{ color: '#fff' }}>
