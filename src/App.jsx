@@ -11,8 +11,8 @@ export default function App(){
       {/*<Navbar />*/}
         <Routes>
           <Route path="/" element={<Landing/>} errorElement={<ErrorPage/>} />
-          <Route path="/about" element={<AboutPage />}/>
-          <Route path="/dashboard" element={<DashBoard />}/>
+          {/* <Route path="/about" element={<AboutPage />}/>
+          <Route path="/dashboard" element={<DashBoard />}/> */}
         </Routes>
       </Router>
     </div>
