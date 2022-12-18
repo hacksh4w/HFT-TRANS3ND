@@ -16,19 +16,16 @@ const ZoomOutExample = () => {
   return (
       <div>
         <style> @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Staatliches&display=swap'); </style>
-        <Zoom scale={1} indicators={false} >
+        <Zoom scale={1} indicators={false} duration='5000' >
             {images.map((each, index) => (
           <div ref={ref} key={index} style={{ width: "100%",height:'100vh',backgroundImage:`url(${each})`,backgroundRepeat:'no-repeat',backgroundSize:'cover' }}>
             {/* <img style={{ objectFit: "cover", width: "100%",height:'100vh'}} alt="Slide Image" src={each} /> */}
             <div style={{fontWeight:'400',fontSize:'300px',color:'white',fontFamily: "'Staatliches', cursive",position:'absolute',right:'40px',bottom:'-70px'}}>SOJOU</div>
-            <Link style={{position: 'absolute', top:'50%', left:'150px'}} to='/mainpage'><img style={{height:'60px'}} src={searchIcon}></img></Link>
+            <Link style={{position: 'absolute', top:'50%', left:'150px'}} to='/mainpage/dashboard'><img style={{height:'60px'}} src={searchIcon}></img></Link>
           </div>
       ))}
       {/*  */}
     </Zoom>
-    <div style={{minHeight: '100vh',backgroundColor:'brown'}}>
-
-    </div>
       </div>
   );
 };

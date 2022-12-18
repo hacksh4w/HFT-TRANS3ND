@@ -2,7 +2,9 @@ import React,{useState} from 'react';
 import Dashnav from '../../components/dashboard/Dashnav';
 import { TextField } from '@mui/material';
 import {InputAdornment} from '@mui/material';
-import searchIcon from '../../assets/frame71.svg'
+import searchIcon from '../../assets/frame71.svg';
+import { Route,Routes } from 'react-router-dom';
+import Dashboard from '../dashboard/Dashboard';
 export default function Mainpage() {
   const [value,setValue] = useState('');
   const [search, setSearch] = useState(true);
@@ -18,7 +20,7 @@ export default function Mainpage() {
   return (
     <div style={{backgroundColor: 'white', minHeight:'100vh',display:'flex',flexDirection:'row'}}>
         <Dashnav/>
-        <div style={{width:'70vw'}}>
+        <div style={{width:'87vw',display:'flex',alignItems:'center',justifyContent:'flex-start',flexDirection:"column"}}>
         <button onClick={()=>(setSearch(!search))} style={{background:'transparent',border:'none',display: search ? 'none' : 'flex',padding:'30px',position:'relative',left:'9.5px'}}>
                                     <img style={{height:'55px'}} src={searchIcon}></img>
                             </button>
@@ -27,7 +29,7 @@ export default function Mainpage() {
                 autoComplete='off'
                 onChange={handleChange} 
                 sx={{
-                    width: '90%',
+                    width: '70%',
                     paddingTop:'30px',
                     paddingLeft:'60px',
                     display: search ? 'flex' : 'none',
@@ -61,6 +63,9 @@ export default function Mainpage() {
                 variant='outlined'
                 label=''
                 id="outlined-basic"/>
+             <Routes>
+                <Route path='/dashboard' element={<Dashboard/>}></Route>
+             </Routes>   
         </div>
     </div>
   )
