@@ -26,9 +26,6 @@ const ZoomOutExample = () => {
       ))}
       {/*  */}
     </Zoom>
-    <div style={{minHeight: '100vh',backgroundColor:'brown'}}>
-
-    </div>
       </div>
   );
 };
