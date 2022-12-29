@@ -12,6 +12,13 @@
 .parent .a1 {
     padding: 10px;
 }
+.parent{
+    border-radius: 20px;
+}
+.a1{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
 .parent .a1 .des{
     font-family: 'Exo 2';
     font-style: normal;
