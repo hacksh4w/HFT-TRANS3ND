@@ -21,7 +21,7 @@ Tech-Heroes : IPFS, web3.storage
 ### **Team Name** : TRANS3ND
 1. [Gourisankar Shaji](https://github.com/GussySussy)
 1. [Mrinalini Nair Ani](https://github.com/hacksh4w/)
-1. [Niya Shiyaz](https://github.com/niyashiyasi)
+1. [Niya Shiyas](https://github.com/niyashiyasi)
 1. [Subramani E](https://github.com/subru-37)
 ## Key Features 
 - [x] **Fully Opensource**
