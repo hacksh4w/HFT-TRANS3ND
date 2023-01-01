@@ -15,7 +15,7 @@ Tech-Heroes : IPFS, web3.storage
 5. [Installation](#installation)
 
 ## Project Description
-###Problem Statement 
+### Problem Statement 
  - There is a rising need for the employment of local service providers who either try and can't find customers organically or just resort to being idle. This is ironically, accompanied by the inability of people who require assistance failing to be able to connect with them. 
  - The lack of a suitable platform which connects these two demographics leaves a gaping hole in the skill market and is a leading of underemployement.  
  ### Our Vision 
