@@ -15,7 +15,12 @@ Tech-Heroes : IPFS, web3.storage
 5. [Installation](#installation)
 
 ## Project Description
-
+###Problem Statement 
+ - There is a rising need for the employment of local service providers who either try and can't find customers organically or just resort to being idle. This is ironically, accompanied by the inability of people who require assistance failing to be able to connect with them. 
+ - The lack of a suitable platform which connects these two demographics leaves a gaping hole in the skill market and is a leading of underemployement.  
+ ### Our Vision 
+ - Our aim is to provide a web3 incorporated platform that uplifts local service-providers.
+ - Our app functions as a social website which focuses on connecting local businesses with people who require their assistance.
 
 ## Team Members
 ### **Team Name** : TRANS3ND
@@ -39,6 +44,7 @@ Tech-Heroes : IPFS, web3.storage
 [DEMO VIDEO](https://drive.google.com/)
 <br>
 [Content Bounty](https://drive.google.com/)
+[PPT Link](https://www.canva.com/design/DAFVD98Zk8o/J8Mr327mzezYOsAmfibG6Q/edit?utm_content=DAFVD98Zk8o&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ### Live Demo
 Hosted Link : [TRANS3ND](https://.netlify.app/)
